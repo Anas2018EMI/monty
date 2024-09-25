@@ -21,6 +21,9 @@ void pop(stack_t **stack, unsigned int line_number)
 	/* Remove the top element of the stack */
 	temp = *stack;
 	*stack = (*stack)->next;
+	if (*stack)
+		(*stack)->prev = NULL;
+
 	free(temp);
 }
 

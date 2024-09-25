@@ -21,6 +21,12 @@ void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number)
 		handle_error(3, line_number);
 	}
 
+	/* If the opcode is "pall" and the stack is empty, skip the opcode */
+	if (strcmp(opcode, "pall") == 0 && !*stack)
+	{
+		return;
+	}
+
 	/* Execute the opcode */
 	op_func(stack, line_number);
 }

@@ -21,7 +21,7 @@ void handle_error(int error_code, unsigned int line_number)
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, global.arg);
 			break;
 		case 4:
-			fprintf(stderr, "L%u: can't pall, stack empty\n", line_number);
+			fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 			break;
 			/* Add more error codes and messages as needed */
 		default:

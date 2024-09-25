@@ -6,13 +6,13 @@
  * @opcode: first arg
  * Return: void
  */
-
 void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 {
 	instruction_t instructions[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		/* Add more opcodes and functions as needed */
 		{NULL, NULL}
 	};

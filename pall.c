@@ -8,14 +8,14 @@
  *
  * Return: void
  */
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number  __attribute__((unused)))
 {
 	stack_t *current = *stack;
 
 	/* Check for stack underflow */
 	if (!current)
 	{
-		handle_error(4, line_number);
+		return;
 	}
 
 	/* Print all the values on the stack */

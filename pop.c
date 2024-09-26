@@ -12,13 +12,11 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	/* Check for stack underflow */
 	if (!*stack)
 	{
 		handle_error(5, line_number);
 	}
 
-	/* Remove the top element of the stack */
 	temp = *stack;
 	*stack = (*stack)->next;
 	if (*stack)

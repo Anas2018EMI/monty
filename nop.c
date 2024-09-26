@@ -10,7 +10,6 @@
  */
 void nop(stack_t **stack, unsigned int line_number)
 {
-	/* The nop opcode doesn't do anything */
 	(void)stack;
 	(void)line_number;
 }

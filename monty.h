@@ -1,5 +1,5 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef MONTY_PROJECT
+#define MONTY_PROJECT
 
 #define  _GNU_SOURCE
 
@@ -68,10 +68,10 @@ void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void (*get_op_func(char *opcode))(stack_t **, unsigned int);
+void (*get_opcode_function(char *opcode))(stack_t **, unsigned int);
 void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number);
 void free_stack(stack_t **stack);
 void handle_error(int error_code, unsigned int line_number);
 void open_and_read_file(char *filename);
 
-#endif /* MONTY_H */
+#endif

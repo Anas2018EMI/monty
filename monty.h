@@ -57,6 +57,7 @@ typedef struct global_t
 extern global_t global;
 
 /* Function prototypes */
+void div_op(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);

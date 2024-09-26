@@ -35,14 +35,19 @@ void handle_error(int error_code, unsigned int line_number)
 		case 8:
 			fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 			break;
-			/* Add more error codes and messages as needed */
+		case 9:
+			fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+			break;
+		case 10:
+			fprintf(stderr, "L%u: division by zero\n", line_number);
+			break;
 		default:
 			fprintf(stderr, "Unknown error\n");
 			break;
 	}
 
-	/* Free the stack and exit with failure status */
 	free_stack(&global.stack);
 	exit(EXIT_FAILURE);
 }
+
 

@@ -18,6 +18,7 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", div_op},
+		{"mul", mul_op},
 		/* Add more opcodes and functions as needed */
 		{NULL, NULL}
 	};
@@ -35,5 +36,4 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 	/* If the opcode is not found, return NULL */
 	return (NULL);
 }
-
 

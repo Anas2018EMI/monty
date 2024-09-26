@@ -6,7 +6,6 @@
  * @opcode: first arg
  * Return: void
  */
-#include "monty.h"
 
 void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 {
@@ -16,6 +15,7 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
 		/* Add more opcodes and functions as needed */
 		{NULL, NULL}
 	};
@@ -33,3 +33,4 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 	/* If the opcode is not found, return NULL */
 	return (NULL);
 }
+

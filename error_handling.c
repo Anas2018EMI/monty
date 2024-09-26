@@ -29,6 +29,9 @@ void handle_error(int error_code, unsigned int line_number)
 		case 6:
 			fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 			break;
+		case 7:
+			fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+			break;
 			/* Add more error codes and messages as needed */
 		default:
 			fprintf(stderr, "Unknown error\n");

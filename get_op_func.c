@@ -6,7 +6,6 @@
  * @opcode: first arg
  * Return: void
  */
-
 void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 {
 	instruction_t instructions[] = {
@@ -16,6 +15,7 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
 		/* Add more opcodes and functions as needed */
 		{NULL, NULL}
 	};

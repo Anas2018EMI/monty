@@ -6,6 +6,8 @@
  * @opcode: first arg
  * Return: void
  */
+#include "monty.h"
+
 void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 {
 	instruction_t instructions[] = {
@@ -13,6 +15,7 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		/* Add more opcodes and functions as needed */
 		{NULL, NULL}
 	};

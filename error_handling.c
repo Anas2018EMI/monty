@@ -26,6 +26,9 @@ void handle_error(int error_code, unsigned int line_number)
 		case 5:
 			fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 			break;
+		case 6:
+			fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+			break;
 			/* Add more error codes and messages as needed */
 		default:
 			fprintf(stderr, "Unknown error\n");
@@ -36,4 +39,3 @@ void handle_error(int error_code, unsigned int line_number)
 	free_stack(&global.stack);
 	exit(EXIT_FAILURE);
 }
-

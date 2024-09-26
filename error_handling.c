@@ -32,6 +32,9 @@ void handle_error(int error_code, unsigned int line_number)
 		case 7:
 			fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 			break;
+		case 8:
+			fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+			break;
 			/* Add more error codes and messages as needed */
 		default:
 			fprintf(stderr, "Unknown error\n");
@@ -42,3 +45,4 @@ void handle_error(int error_code, unsigned int line_number)
 	free_stack(&global.stack);
 	exit(EXIT_FAILURE);
 }
+

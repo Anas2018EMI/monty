@@ -20,9 +20,9 @@ void handle_error(int error_code, unsigned int line_number)
 		"can't sub, stack too short",
 		"can't div, stack too short",
 		"division by zero",
-		"can't mul, stack too short"
-	};
-	if (error_code < 1 || error_code > 11)
+		"can't mul, stack too short",
+		"can't mod, stack too short"};
+	if (error_code < 1 || error_code > 12)
 	{
 		fprintf(stderr, "Unknown error\n");
 	}
@@ -37,4 +37,3 @@ void handle_error(int error_code, unsigned int line_number)
 	free_stack(&global.stack);
 	exit(EXIT_FAILURE);
 }
-

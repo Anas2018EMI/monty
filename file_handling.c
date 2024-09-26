@@ -6,6 +6,10 @@
  * @filename: first arg
  * Return: void
  */
+
+#include <stdio.h>
+#include "monty.h"
+
 void open_and_read_file(char *filename)
 {
 	FILE *file;
@@ -15,7 +19,6 @@ void open_and_read_file(char *filename)
 	char *opcode;
 	char *arg;
 
-	/* Open the file */
 	file = fopen(filename, "r");
 	if (!file)
 	{
@@ -23,12 +26,10 @@ void open_and_read_file(char *filename)
 		exit(EXIT_FAILURE);
 	}
 
-	/* Read the file line by line */
 	while (getline(&line, &len, file) != -1)
 	{
 		line_number++;
 
-		/* Parse the line into opcode and argument */
 		opcode = strtok(line, " \t\n");
 		if (!opcode || opcode[0] == '#')
 		{
@@ -36,14 +37,13 @@ void open_and_read_file(char *filename)
 		}
 		arg = strtok(NULL, " \t\n");
 
-		/* Set the global argument variable */
 		global.arg = arg;
 
-		/* Execute the opcode */
 		execute_opcode(&global.stack, opcode, line_number);
 	}
+
 	free(line);
 	fclose(file);
+
 	free_stack(&global.stack);
 }
-

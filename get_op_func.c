@@ -19,9 +19,9 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 		{"sub", sub},
 		{"div", div_op},
 		{"mul", mul_op},
+		{"mod", mod_op},
 		/* Add more opcodes and functions as needed */
-		{NULL, NULL}
-	};
+		{NULL, NULL}};
 	int i;
 
 	/* Search for the opcode in the instructions array */
@@ -36,4 +36,3 @@ void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 	/* If the opcode is not found, return NULL */
 	return (NULL);
 }
-
